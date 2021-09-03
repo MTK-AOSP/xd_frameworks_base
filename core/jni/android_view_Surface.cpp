@@ -1,3 +1,4 @@
+
 /*
  * Copyright (C) 2007 The Android Open Source Project
  *
@@ -378,6 +379,7 @@ static jlong nativeGetNextFrameNumber(JNIEnv *env, jclass clazz, jlong nativeObj
     Surface* surface = reinterpret_cast<Surface*>(nativeObject);
     return surface->getNextFrameNumber();
 }
+
 
 static jboolean nativeIsBufferAccumulated(JNIEnv* env, jclass clazz,
         jlong nativeObject) {

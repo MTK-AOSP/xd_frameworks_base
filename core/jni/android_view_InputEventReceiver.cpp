@@ -247,9 +247,9 @@ status_t NativeInputEventReceiver::consumeEvents(JNIEnv* env,
 
         InputEvent* inputEvent;
 
+
         status_t status = mInputConsumer.consume(&mInputEventFactory,
-                consumeBatches, frameTime, &seq, &inputEvent,
-                &motionEventType, &touchMoveNum, &flag);
+                consumeBatches, frameTime, &seq, &inputEvent);
 
         if (!receiverObj.get()) {
             receiverObj.reset(jniGetReferent(env, mReceiverWeakGlobal));
