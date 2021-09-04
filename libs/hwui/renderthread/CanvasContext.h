@@ -56,12 +56,6 @@ class RenderState;
 
 namespace renderthread {
 
-enum {
-    DEFAULT_MODE = -1,
-    AUTO_TIME_MODE = 0,
-    SET_CURRENT_TIME_MODE = 1
-};
-
 class Frame;
 
 // This per-renderer class manages the bridge between the global EGL context

@@ -205,7 +205,6 @@ public class CallerInfo {
      * @hide
      */
     public static CallerInfo getCallerInfo(Context context, Uri contactRef, Cursor cursor) {
-        android.util.SeempLog.record_uri(12, contactRef);
         CallerInfo info = new CallerInfo();
         info.photoResource = 0;
         info.phoneLabel = null;
@@ -398,7 +397,6 @@ public class CallerInfo {
      */
     @UnsupportedAppUsage
     public static CallerInfo getCallerInfo(Context context, String number, int subId) {
-        android.util.SeempLog.record_str(12, "number="+number+",subId="+subId);
 
         if (TextUtils.isEmpty(number)) {
             return null;

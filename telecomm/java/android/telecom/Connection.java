@@ -404,14 +404,8 @@ public abstract class Connection extends Conferenceable {
      */
     public static final int CAPABILITY_TRANSFER_CONSULTATIVE = 0x10000000;
 
-    /**
-     * Remote device supports RTT.
-     * @hide
-     */
-    public static final int CAPABILITY_SUPPORTS_RTT_REMOTE = 0x20000000;
-
     //**********************************************************************************************
-    // Next CAPABILITY value: 0x40000000
+    // Next CAPABILITY value: 0x20000000
     //**********************************************************************************************
 
     /**
@@ -539,18 +533,9 @@ public abstract class Connection extends Conferenceable {
      */
     public static final int PROPERTY_IS_ADHOC_CONFERENCE = 1 << 12;
 
-    /**
-     * Set by the framework to indicate that a Connection is participant host, which
-     * means the conference participant's handle is the same as the conference host's handle.
-     * <p>
-     * This property is specific to IMS conference calls originating in Telephony.
-     * @hide
-     */
-    public static final int PROPERTY_IS_PARTICIPANT_HOST = 1 << 13;
-
 
     //**********************************************************************************************
-    // Next PROPERTY value: 1<<14
+    // Next PROPERTY value: 1<<13
     //**********************************************************************************************
 
     /**
@@ -1030,9 +1015,6 @@ public abstract class Connection extends Conferenceable {
         if ((capabilities & CAPABILITY_TRANSFER_CONSULTATIVE)
                 == CAPABILITY_TRANSFER_CONSULTATIVE) {
             builder.append(isLong ? " CAPABILITY_TRANSFER_CONSULTATIVE" : " sup_cTrans");
-        }
-        if ((capabilities & CAPABILITY_SUPPORTS_RTT_REMOTE) == CAPABILITY_SUPPORTS_RTT_REMOTE) {
-            builder.append(isLong ? " CAPABILITY_SUPPORTS_RTT_REMOTE" : " sup_rtt");
         }
         builder.append("]");
         return builder.toString();

@@ -1,4 +1,3 @@
-
 /*
  * Copyright (C) 2007 The Android Open Source Project
  *
@@ -380,19 +379,6 @@ static jlong nativeGetNextFrameNumber(JNIEnv *env, jclass clazz, jlong nativeObj
     return surface->getNextFrameNumber();
 }
 
-
-static jboolean nativeIsBufferAccumulated(JNIEnv* env, jclass clazz,
-        jlong nativeObject) {
-    Surface* surface = reinterpret_cast<Surface*>(nativeObject);
-    return surface->isBufferAccumulated() ? JNI_TRUE : JNI_FALSE;
-}
-
-static void nativeSetPresentTimeMode(JNIEnv* env, jclass clazz, jlong nativeObject,
-        jint mode) {
-    Surface* surface = reinterpret_cast<Surface*>(nativeObject);
-    surface->setPresentTimeMode(mode);
-}
-
 static jint nativeSetScalingMode(JNIEnv *env, jclass clazz, jlong nativeObject, jint scalingMode) {
     Surface* surface = reinterpret_cast<Surface*>(nativeObject);
     return surface->setScalingMode(scalingMode);
@@ -466,8 +452,6 @@ static const JNINativeMethod gSurfaceMethods[] = {
     {"nativeGetWidth", "(J)I", (void*)nativeGetWidth },
     {"nativeGetHeight", "(J)I", (void*)nativeGetHeight },
     {"nativeGetNextFrameNumber", "(J)J", (void*)nativeGetNextFrameNumber },
-    {"nativeIsBufferAccumulated", "(J)Z", (void*)nativeIsBufferAccumulated },
-    {"nativeSetPresentTimeMode", "(JI)V", (void*)nativeSetPresentTimeMode },
     {"nativeSetScalingMode", "(JI)I", (void*)nativeSetScalingMode },
     {"nativeForceScopedDisconnect", "(J)I", (void*)nativeForceScopedDisconnect},
     {"nativeAttachAndQueueBufferWithColorSpace", "(JLandroid/graphics/GraphicBuffer;I)I",
